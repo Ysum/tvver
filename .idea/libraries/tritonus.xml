@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="tritonus">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ether-gl/EtherGL/lib/tritonus/javalayer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../ether-gl/EtherGL/lib/tritonus/mp3plugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../ether-gl/EtherGL/lib/tritonus/tritonus_share-0.3.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

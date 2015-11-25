@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Effects/Effects.iml" filepath="$PROJECT_DIR$/Effects/Effects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ether-gl/EtherGL/EtherGL.iml" filepath="$PROJECT_DIR$/../ether-gl/EtherGL/EtherGL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ether-gl/EtherGL-Examples/EtherGL-Examples.iml" filepath="$PROJECT_DIR$/../ether-gl/EtherGL-Examples/EtherGL-Examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ether-gl/EtherGL-Mapping/EtherGL-Mapping.iml" filepath="$PROJECT_DIR$/../ether-gl/EtherGL-Mapping/EtherGL-Mapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/abgabe/ModemSakul/ModemSakul.iml" filepath="$PROJECT_DIR$/abgabe/ModemSakul/ModemSakul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Playground/Playground.iml" filepath="$PROJECT_DIR$/Playground/Playground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tvver_clean/modem/modem_Clean.iml" filepath="$PROJECT_DIR$/../tvver_clean/modem/modem_Clean.iml" />
+    </modules>
+  </component>
+</project>

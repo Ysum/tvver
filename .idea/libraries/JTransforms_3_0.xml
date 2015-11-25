@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JTransforms-3.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ether-gl/EtherGL/lib/jtransforms/JTransforms-3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

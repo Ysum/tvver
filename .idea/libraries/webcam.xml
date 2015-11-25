@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="webcam">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ether-gl/EtherGL/lib/webcam/webcam-capture-0.3.10-RC4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../ether-gl/EtherGL/lib/webcam/bridj-0.7-20130703.103049-42.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../ether-gl/EtherGL/lib/webcam/slf4j-api-1.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
