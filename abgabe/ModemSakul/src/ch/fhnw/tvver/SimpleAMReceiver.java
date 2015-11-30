@@ -34,12 +34,12 @@ import ch.fhnw.ether.media.Parameter;
 
 /**
  * Simple receiver using amplitude modulation.
- * 
+ *
  * @author sschubiger
  *
  */
 public class SimpleAMReceiver extends AbstractReceiver {
-	 
+
 	/* Experimental threshold for detecting start tone. Should be adaptive. */
 	private static final Parameter START_THRESH = new Parameter("start", "Start Threshold", 0,0.5f,0.1f);
 	/* Threshold for detecting binary "one". */
@@ -59,10 +59,10 @@ public class SimpleAMReceiver extends AbstractReceiver {
 	public SimpleAMReceiver() {
 		super(START_THRESH, ONE_THRESH);
 	}
-	
+
 	/**
 	 * Process one sample (power).
-	 * 
+	 *
 	 * @param sample The sample to process.
 	 */
 	private void process(float sample) {
@@ -80,7 +80,7 @@ public class SimpleAMReceiver extends AbstractReceiver {
 			energy[energyIdx] += sample;
 			/* End of symbol? */
 			if(++sampleIdx == symbolSz) {
-				/* Advance to next symbol */ 
+				/* Advance to next symbol */
 				sampleIdx = 0;
 				energyIdx++;
 				/* Enough data for a byte? */
@@ -104,7 +104,7 @@ public class SimpleAMReceiver extends AbstractReceiver {
 
 	/**
 	 * Process samples. Samples are squared (power).
-	 * 
+	 *
 	 * @param samples The samples to process.
 	 */
 	@Override

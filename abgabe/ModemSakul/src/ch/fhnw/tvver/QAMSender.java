@@ -2,16 +2,41 @@ package ch.fhnw.tvver;
 
 import ch.fhnw.util.FloatList;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * Created by lukasmusy
+ *
+ * Created by Lukas Musy and Tobias Ernst
+ *
+ * Adopted from SimpleAMReceiver, courtesy of Simon Schubiger
+ *
  */
 public class QAMSender extends AbstractSender {
     private static final double PI2  = Math.PI * 2;
+
     /* Carrier frequency. */
     static final float FREQ = 3000;
+    static int SYMBOLSIZE;
 
     static final float phasePoints[] = {1, 0.3f, -0.3f, -1};
     static final float amplitudePoints[] = {0.8f, 0.3f, -0.3f, -0.8f};
+
+//    static final Map<Integer, float[]> SYMBOLS = new HashMap<>();
+    static float[][]  SYMBOLS = new float[16][];
+
+
+    @Override
+    public float[] init(float samplingFrequency) {
+        SYMBOLSIZE = (int) (samplingFrequency / FREQ);
+
+        for (int i = 0; i < 16; i++) {
+            float[] constPoints = lookUpConstellationPoint(i);
+            SYMBOLS[i] = symbol(constPoints[0], constPoints[1]);
+        }
+
+        return super.init(samplingFrequency);
+    }
 
     /**
      * Create a wave with given amplitude and phase.
@@ -20,11 +45,10 @@ public class QAMSender extends AbstractSender {
      * @return Audio data for symbol.
      */
     private float[] symbol(float phase, float amp) {
-        final int symbolSz = (int) (samplingFrequency / FREQ);
-        final float[] result = new float[symbolSz];
+        final float[] result = new float[SYMBOLSIZE];
 
         for(int i = 0; i < result.length; i++)
-            result[i] = (float) (Math.sin((PI2 * i + phase) / symbolSz)) * amp;
+            result[i] = (float) (Math.sin((PI2 * i + phase) / SYMBOLSIZE)) * amp;
 
         return result;
     }
@@ -39,7 +63,7 @@ public class QAMSender extends AbstractSender {
 
         for (int d = 0; d < data.length; d++) {
             int highNibble = data[d] >>> 4;
-            int lowNibble = data[d]& 0x0f;
+            int lowNibble = data[d] & 0x0f;
 
             result.addAll(getSymbol(highNibble));
             result.addAll(getSymbol(lowNibble));
@@ -47,7 +71,7 @@ public class QAMSender extends AbstractSender {
         return result._getArray();
     }
 
-    private float[] lookUp(int nibble) {
+    private float[] lookUpConstellationPoint(int nibble) {
         float values[] = new float[2];
 
         //phase value
@@ -59,8 +83,10 @@ public class QAMSender extends AbstractSender {
     }
 
     private float[] getSymbol(int nibble) {
-        float[] constPoint = lookUp(nibble);
-        return symbol(constPoint[0], constPoint[1]);
+//        float[] constPoint = lookUpConstellationPoint(nibble);
+//        return symbol(constPoint[0], constPoint[1]);
+
+        return SYMBOLS[nibble];
 
     }
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.." vcs="svn" />
     <mapping directory="$PROJECT_DIR$/../ether-gl/EtherGL" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/../ether-gl/EtherGL-Examples" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/../ether-gl/EtherGL-Mapping" vcs="svn" />
